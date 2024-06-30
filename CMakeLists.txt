@@ -3,7 +3,7 @@ project(myrobot)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(cpp main.cpp
+add_executable(myrobot main.cpp
         House/IHouse.hpp
         House/House.hpp
         House/House.cpp
