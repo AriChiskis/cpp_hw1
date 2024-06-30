@@ -1,0 +1,10 @@
+WWWWWW
+W1234W
+W1239W
+W1234W
+W1234W
+WD234W
+WWWWWW
+Max Battery: 50
+Max Mission Steps: 100
+
