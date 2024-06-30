@@ -18,7 +18,7 @@ public:
     std::pair<int, int> getPosition() const;
 
     void updatePosition(int x, int y);
-    void print(bool printDimensions = true) const override;
+    void print(bool printDimensions = true) const;
 };
 
 #endif // HOUSESENSOR_HPP

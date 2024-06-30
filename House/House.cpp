@@ -3,26 +3,7 @@
 #include <fstream>
 #include <stdexcept>
 
-//House::House(const std::string& filename) {
-//    std::ifstream file(filename);
-//    if (!file.is_open()) {
-//        std::cerr << "Could not open file: " << filename << std::endl;
-//        throw std::runtime_error("Could not open file: " + filename);
-//    }
-//    std::string line;
-//    int y = 0;
-//    while (getline(file, line)) {
-//        std::vector<char> row(line.begin(), line.end());
-//        for (size_t x = 0; x < line.length(); ++x) {
-//            if (line[x] == 'D') {
-//                dockingStation = std::make_pair(x, y);
-//            }
-//        }
-//        grid.push_back(row);
-//        ++y;
-//    }
-//    file.close();
-//}
+
 House::House(const std::string& filename) {
     std::ifstream file(filename);
     if (!file.is_open()) {

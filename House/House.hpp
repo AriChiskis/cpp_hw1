@@ -26,7 +26,7 @@ public:
     // Implementation of IHouse interface
     int getDirtLevel(int x, int y) const override;
     bool isWall(int x, int y) const override;
-    void print(bool printDimensions = true) const override;
+    void print(bool printDimensions = true) const;
     void decrementDirt(int x, int y);
     std::pair<int, int> getDockingStation();  // Declare this method
     void printCoordinate(int x, int y) const;

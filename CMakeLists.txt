@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.27)
-project(myrobot)
+project(cpp_hw1)
 
 set(CMAKE_CXX_STANDARD 20)
 
