@@ -21,6 +21,14 @@ At the end of a cleaning session, the robot generates a report detailing its act
 - **Battery Status**: The remaining battery percentage at the end of the session.
 - **Mission Status**: Indicates whether the cleaning mission was successful (all dirt cleaned and robot returned to docking station).
 
+#### Example of Output
+Steps History:
+NORTH STAY SOUTH NORTH NORTH STAY SOUTH EAST STAY STAY EAST STAY STAY STAY EAST STAY STAY STAY STAY WEST ...  ... ... ...
+Total Steps: 100
+Remaining Dirt: 28
+Battery Status: 25
+Mission Status: Failed
+
 ### Simulation Input
 
 The robot reads its initial layout from a text file located in the `Inputs` directory. This file includes:
@@ -28,7 +36,7 @@ The robot reads its initial layout from a text file located in the `Inputs` dire
 - **Max Battery**: The maximum battery capacity of the robot.
 - **Max Mission Steps**: The maximum number of steps the robot can take before it must consider returning to the dock.
 
-#### Textual Representation of House Layout and Settings
+#### Example of House Layout and Settings
 
 WWWWWW
 W1234W
@@ -43,6 +51,8 @@ Max Mission Steps: 100
 
 ## Classes and Components
 
+- **UML*
+  - In the UML directory , we have the sketch of all the details of how the classes are acting with erach other
 ### Abstract Base Classes
 
 #### IEnvironment
@@ -120,3 +130,16 @@ mkdir -p build
 cd build
 cmake ..
 make
+mv myrobot ../myrobot #it moves it to the main directory so it will be more comfortable to run :)
+
+
+### Running the Simulation
+
+The main executable for this project is `myrobot`, which reads an input file specifying the layout of the house and configuration settings for the vacuum cleaner.
+
+#### How to Run
+
+To start the simulation, navigate to the directory containing the executable and run the following command:
+
+```bash
+./myrobot Inputs/house_layout.txt

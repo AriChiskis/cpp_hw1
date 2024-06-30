@@ -31,7 +31,7 @@ void loadVacuumSettings(const std::string& filename, int& maxBattery, int& maxMi
 
 int main(int argc, char* argv[]) {
     std::string filename = argv[1]; // Get the filename from the command line
-
+      std::string baseName = std::filesystem::path(filename).stem().string(); 
     try {
         House house(filename);
         int maxBattery = 0;
@@ -47,7 +47,8 @@ int main(int argc, char* argv[]) {
         int result = cleaningAlgorithm.executeCleaningSession();
         int totalDirt = house.calculateTotalDirt();
         std::cout<< "saving report " << std::endl;
-        cleaningAlgorithm.writeOutputFile("result.txt",totalDirt,result);
+        std::string resultFileName = "Output/result_" + baseName + ".txt";
+        cleaningAlgorithm.writeOutputFile(resultFileName,totalDirt,result);
 
 
     } catch (const std::exception& e) {
