@@ -4,7 +4,7 @@
 
 #ifndef CPP_ICLEANER_HPP
 #define CPP_ICLEANER_HPP
-class ICleaner {
+class ICleaner : public IEnvironment {
 public:
     virtual ~ICleaner() {}
 
