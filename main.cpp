@@ -6,7 +6,7 @@
 #include "CleaningAlgorithm/CleaningAlgorithm.hpp"
 #include <fstream>
 #include <sstream>
-
+#include<filesystem>
 void loadVacuumSettings(const std::string& filename, int& maxBattery, int& maxMissionSteps) {
     std::ifstream file(filename);
     if (!file) {
