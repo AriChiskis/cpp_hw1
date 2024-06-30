@@ -6,32 +6,6 @@
 #include "CleaningAlgorithm/CleaningAlgorithm.hpp"
 #include <fstream>
 #include <sstream>
-int runSimulation(){
-    // File name containing the house layout
-    std::string filename = "/Users/arielchiskis/Documents/cpp/Inputs/house_layout.txt";
-
-    try {
-        House house(filename);
-        std::cout << "Calculating Totaldirt at start: " << house.calculateTotalDirt() << std::endl;
-        DirtSensor dirtSensor(house,house.getDockingStation());
-        WallSensor wallSensor(house,house.getDockingStation());
-        BatterySensor batterySensor(100); // Assume a full battery capacity of 100 units
-        VacuumCleaner vacuum(&batterySensor, &wallSensor, &dirtSensor, 20, 4); // Example maxSteps and batteryCapacity
-
-
-        CleaningAlgorithm cleaningAlgorithm(vacuum);
-        int result = cleaningAlgorithm.executeCleaningSession();
-        int totalDirt = house.calculateTotalDirt();
-        std::cout<< "saving report " << std::endl;
-        cleaningAlgorithm.writeOutputFile("result.txt",totalDirt,result);
-
-
-    } catch (const std::exception& e) {
-        std::cerr << "Error during simulation: " << e.what() << std::endl;
-        return 1;
-    }
-    return 0;
-}
 
 void loadVacuumSettings(const std::string& filename, int& maxBattery, int& maxMissionSteps) {
     std::ifstream file(filename);

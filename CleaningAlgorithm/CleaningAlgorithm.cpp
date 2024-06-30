@@ -264,60 +264,6 @@ int CleaningAlgorithm::rechargeFully() {
     return 2;
 }
 
-//
-//
-//void CleaningAlgorithm::writeOutputFile(const std::string& filename, bool houseIsClean, int robotFinishedAtOrigin) {
-//    try {
-//        std::ofstream outFile(filename);
-//        if (!outFile) {
-//            throw std::runtime_error("Failed to open output file: " + filename);
-//        }
-//
-//        outFile << "Steps History:" << std::endl;
-//        for (const auto& step : history) {
-//            outFile << directionToString(step) << " ";
-//        }
-//        outFile << std::endl << "Total Steps: " << history.size() << std::endl;
-//        outFile << "Remaining Dirt: " << (houseIsClean ? "None" : "Present") << std::endl;
-//        outFile << "Battery Status: " << (vacuum.getBatteryLevel() > 0 ? "Operational" : "Exhausted") << std::endl;
-//        outFile << "Mission Status: " << (houseIsClean && robotFinishedAtOrigin ? "Succeeded" : "Failed") << std::endl;
-//        outFile.close();
-//    } catch (const std::exception& e) {
-//        std::cerr << "Error writing to file: " << e.what() << std::endl;
-//    }
-//
-//}
-
-//
-//void CleaningAlgorithm::writeOutputFile(const std::string& filename, bool houseIsClean, int robotFinishedAtOrigin) {
-//    try {
-//        std::ofstream outFile(filename);
-//        if (!outFile) {
-//            throw std::runtime_error("Failed to open output file: " + filename);
-//        }
-//
-//        // Using filesystem to get the absolute path of the file
-//        std::filesystem::path filePath = std::filesystem::absolute(filename);
-//        std::cout << "Output file saved to: " << filePath << std::endl;  // Print the full path to the console
-//
-//        outFile << "Steps History:" << std::endl;
-//        for (const auto& step : history) {
-//            outFile << directionToString(step) << " ";
-//        }
-//        outFile << std::endl;
-//        outFile << "Total Steps: " << history.size() << std::endl;
-//        outFile << "Remaining Dirt: " << (houseIsClean ? "None" : "Present") << std::endl;
-//        outFile << "Battery Status: " << (vacuum.getBatteryLevel() > 0 ? "Operational" : "Exhausted") << std::endl;
-//        outFile << "Mission Status: " << (houseIsClean && robotFinishedAtOrigin ? "Succeeded" : "Failed") << std::endl;
-//
-//        outFile.close();  // Properly close the file
-//    } catch (const std::exception& e) {
-//        std::cerr << "Error writing to file: " << e.what() << std::endl;  // Catch and log any exceptions that occur during file operations
-//    }
-//}
-//
-
-
 
 void CleaningAlgorithm::writeOutputFile(const std::string& filename, int totalDirtLeft, int robotFinishedAtOrigin) {
     try {
