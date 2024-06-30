@@ -2,6 +2,7 @@
 #include <iostream>
 #include <random> // For std::random_device and std::shuffle
 #include <fstream>
+#include <filesystem>
 CleaningAlgorithm::CleaningAlgorithm(VacuumCleaner& vacuum)
         : vacuum(vacuum), map(), mapPosition(0, 0) {
     // Optionally set initial conditions on the map, such as marking the docking station
