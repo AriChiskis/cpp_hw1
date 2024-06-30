@@ -268,7 +268,7 @@ int CleaningAlgorithm::rechargeFully() {
 void CleaningAlgorithm::writeOutputFile(const std::string& filename, int totalDirtLeft, int robotFinishedAtOrigin) {
     try {
         // Construct the full path to the output directory
-        std::filesystem::path dirPath = std::filesystem::current_path() / "Output";
+        std::filesystem::path dirPath = std::filesystem::current_path();
 
         // Create the directory if it does not exist
         std::filesystem::create_directories(dirPath);  // Safely does nothing if the directory already exists
